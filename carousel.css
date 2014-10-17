@@ -24,15 +24,14 @@ overflow:visible;
 .Intro{
 font-size:300%;
 color: white;
-width: auto;
-overflow:visible;
+margin-top: 140px;
+
 color:white;
 z-index:9;
 position:absolute;
-top:50%;
-left:0;
+
 width:100%;
-margin-top:70px;
+
 text-align:center;
 font-family:Ariel, Helvetica, sans-serif;
 }
