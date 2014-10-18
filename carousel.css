@@ -5,6 +5,7 @@
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .italic{
@@ -22,10 +23,11 @@ overflow:visible;
 }
 
 .Intro{
-font-size:300%;
+font-size:350%;
 color: white;
 margin-top: 140px;
-
+font-family:Ariel, Helvetica, sans-serif;
+font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 color:white;
 z-index:9;
 position:absolute;
@@ -33,11 +35,11 @@ position:absolute;
 width:100%;
 text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 text-align:center;
-font-family:Ariel, Helvetica, sans-serif;
+
 }
-
-
-
+h1{
+font-weight: bold;font-size:350%;
+}
 
 .title{
 height:0px;
