@@ -41,6 +41,23 @@ h1{
 font-weight: bold;font-size:350%;
 }
 
+#brandheading{
+margin-bottom: 5%;
+font-size:350%;
+font-weight: normal;
+
+}
+
+
+.bold{
+
+
+font-weight: 500;
+
+}
+
+
+
 .title{
 height:0px;
 
