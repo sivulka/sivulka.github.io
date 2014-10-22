@@ -12,7 +12,7 @@ body {
 .container{
 font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 
-  
+
 }
 
 .italic{
@@ -196,5 +196,19 @@ height:0px;
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;
+  }
+}
+/*
+#upbitch{
+margin-top:-120px;margin-bottom:auto;
+
+
+
+
+  }*/
+
+  @media (min-width: 992px) {
+  .featurette-heading-up {
+    margin-top: 50px;    font-size: 50px;
   }
 }
