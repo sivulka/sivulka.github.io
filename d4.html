@@ -72,8 +72,12 @@
 
 
     <div id="forcey">
-
+<svg height="500px" width="960px" >
 <script>
+var w = 960,
+    h = 500;
+
+
 var dataset={
     nodes:[
          {name:"assdfgsdf"},
@@ -107,7 +111,7 @@ var dataset={
 var force = d3.layout.force()
                 .nodes(dataset.nodes)
                 .links(dataset.edges)
-                .size(["800px", "800px"]) 
+                .size([w, h]) 
                 .linkDistance([50])
                 .charge([-100])
                 .start();
@@ -147,6 +151,6 @@ force.on("tick", function() {
 
 </script>
 
-
+</svg>
 
     </div>
