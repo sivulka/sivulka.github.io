@@ -302,6 +302,18 @@ form .row:first-child .floating-label-form-group {
 #forcey{
 margin-right: auto;
 margin-left: auto;
-
+border: solid 1px white;
 }
 
+
+
+
+.img-responsive2{
+padding: 0px;
+margin-top: 0px;
+
+
+
+
+
+}
