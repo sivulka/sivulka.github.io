@@ -10,7 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
     <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+   
     <title>George Sivulka</title>
 
     <!-- CSS -->
@@ -24,12 +24,18 @@
     <![endif]-->
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+           
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
             <style>
-        #forcey{
-            width:100%;
-            height:auto;
-            background-color: ;
-        }
+   
+
+
+
+               svg {
+                font: 10px sans-serif;
+                padding: 10px;
+                }
+
         </style>
   </head>
 <!-- NAVBAR -->
@@ -37,7 +43,7 @@
 
 
   <body>
-
+ <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <nav class="navbar navbar-default navbar-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -77,75 +83,123 @@
 var w = 960,
     h = 500;
 
+var svg = d3.select("#forcey")
+    .append("svg:svg")
+    .attr("width", w)
+    .attr("height", h);
 
-var dataset={
-    nodes:[
-         {name:"assdfgsdf"},
-         {name:"sfsdfgd"},
-         {name:"adsfasdfasdf"},
-         {name:"asarddf"},
-         {name:"fggfsdhj"},
-         {name:"asfgdf"},
-         {name:"asgfdf"},
-         {name:"asdgfdf"},
-         {name:"asfgsddf"},
-         {name:"assdfgsdfdf"}
-    ],
-     edges:[
-         {source:0, target:1},
-         {source:0, target:2},
-         {source:0, target:3},
-         {source:0, target:4},
-         {source:1, target:5},
-         {source:2, target:5},
-         {source:2, target:5},
-         {source:3, target:4},
-         {source:5, target:8},
-         {source:5, target:9},
-         {source:5, target:7},
-         {source:7, target:8},
-         {source:8, target:9}
-    ]
+var colors = d3.scale.category10();
+
+var dataset = {
+    nodes: [{
+        name: "assdfgsdf"
+    }, {
+        name: "sfsdfgd"
+    }, {
+        name: "adsfasdfasdf"
+    }, {
+        name: "asarddf"
+    }, {
+        name: "fggfsdhj"
+    }, {
+        name: "asfgdf"
+    }, {
+        name: "asgfdf"
+    }, {
+        name: "asdgfdf"
+    }, {
+        name: "asfgsddf"
+    }, {
+        name: "assdfgsdfdf"
+    }],
+    edges: [{
+        source: 0,
+        target: 1
+    }, {
+        source: 0,
+        target: 2
+    }, {
+        source: 0,
+        target: 3
+    }, {
+        source: 0,
+        target: 4
+    }, {
+        source: 1,
+        target: 5
+    }, {
+        source: 2,
+        target: 5
+    }, {
+        source: 2,
+        target: 5
+    }, {
+        source: 3,
+        target: 4
+    }, {
+        source: 5,
+        target: 8
+    }, {
+        source: 5,
+        target: 9
+    }, {
+        source: 6,
+        target: 3
+    }, {
+        source: 7,
+        target: 8
+    }, {
+        source: 8,
+        target: 9
+    }]
 };
 
 var force = d3.layout.force()
-                .nodes(dataset.nodes)
-                .links(dataset.edges)
-                .size([w, h]) 
-                .linkDistance([50])
-                .charge([-100])
-                .start();
-
+    .nodes(dataset.nodes)
+    .links(dataset.edges)
+    .size([w, h])
+    .linkDistance([50])
+    .charge([-100])
+    .start();
 
 var edges = svg.selectAll("line")
     .data(dataset.edges)
     .enter()
-    .append(line)
-    .style("stroke","#ccc")
-    .style("stroke-width", 1);
+    .append("line")
+    .style("stroke", "#000")
+    .style("stroke-width", "1px");
 
 var nodes = svg.selectAll("circle")
     .data(dataset.nodes)
     .enter()
-    .append(circle)
+    .append("circle")
     .attr("r", 10)
-    .style("fill", function(d,i) {
-        return colors(i);
-    })
-    .call(force.drag)
-
-force.on("tick", function() {
-//bellow dis tells the d3 head boss to update the x and y values(that it somehow magically autogenerates for every value with the force funciton upp way above)  every tick (which is defined right avove this)
-    edges.attr("x1", function(d) {return d.source.x; })
-         .attr("y1", function(d) {return d.source.y; })
-         .attr("x2", function(d) {return d.source.x; })
-         .attr("y2", function(d) {return d.source.y; });
-    nodes.attr("cx", function(d) {return d.x; })
-         .attr("cy", function(d) {return d.y; })    
-
-
+    .style("fill", function (d, i) {
+    return colors(i);
 })
+    .call(force.drag);
 
+force.on("tick", function () {
+    //bellow dis tells the d3 head boss to update the x and y values(that it somehow magically autogenerates for every value with the force funciton upp way above)  every tick (which is defined right avove this)
+    edges.attr("x1", function (d) {
+        return d.source.x;
+    })
+        .attr("y1", function (d) {
+        return d.source.y;
+    })
+        .attr("x2", function (d) {
+        return d.target.x;
+    })
+        .attr("y2", function (d) {
+        return d.target.y;
+    });
+    nodes.attr("cx", function (d) {
+        return d.x;
+    })
+        .attr("cy", function (d) {
+        return d.y;
+    });
+});
 
 
 
