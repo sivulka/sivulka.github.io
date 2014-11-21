@@ -2008,7 +2008,7 @@ textarea.input-lg, select[multiple].input-lg {
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
     color: #333;
-    background-color: rgba(250,250,250,0.4);
+    background-color: rgba(250,250,250,0.45);
     
 }
 .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
