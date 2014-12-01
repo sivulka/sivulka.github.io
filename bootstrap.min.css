@@ -4843,7 +4843,15 @@ th.visible-print, td.visible-print {
     font-size: 18px;
     line-height: 1.33;
  	background-color:rgba(250,250,250,0.75);
- 	border: 1px solid #333;
+ 	border: 1px solid #ABABAB;
  	color:black;
 }
+
+.navbar-right{
+margin-top:6px;
+
+
+
+}
+
 /*line 2000*/
