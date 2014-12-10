@@ -152,7 +152,9 @@ height:0px;
 }
 
 
-#hide{
+#hide.a{
+    color:white;
+    background-color: blue;
 ;
 
 
