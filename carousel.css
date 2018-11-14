@@ -2,6 +2,75 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+
+
+
+h1 {
+  font-family: 'Helvetica', 'sans-serif' !important;
+  font-weight: 400 !important;
+  letter-spacing: 0px;
+
+ }
+
+.bigger{
+
+font-family: 'Lato', 'sans-serif' !important;
+  font-size: 400% !important;
+}
+
+
+ h2 {
+font-family: 'Helvetica', 'sans-serif' !important;
+  font-weight: 100;
+  letter-spacing: 0px;
+
+
+
+ }
+
+
+
+header {
+  padding-left: 30px;
+  padding-top: 15%;
+  position: relative;
+  height:100vh;
+    /*color: rgb(8, 76, 130);
+      color: rgb(8, 76, 130);*/
+
+  color: white ;
+  background-image: url("everest3.jpg");
+       background-repeat:repeat;
+    background-position:right bottom;
+
+
+    background-attachment: ;
+  -webkit-background-size: 100% auto;
+  -moz-background-size:100% auto;
+  -o-background-size: 100% auto;
+  background-size:100% auto;
+  font-family: 'Khula',  'sans-serif';
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 0px) and (max-width: 850px) {
   .smallhide { font-size: 1.75em !important; }  /* show it on small screens */
 }
