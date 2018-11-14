@@ -34,14 +34,14 @@ header {
   padding-left: 30px;
   padding-top: 15%;
   position: relative;
-  height:100vh;
+  height:90vh;
     /*color: rgb(8, 76, 130);
       color: rgb(8, 76, 130);*/
 
   color: white ;
   background-image: url("everest3.jpg");
        background-repeat:repeat;
-    background-position:right bottom;
+    background-position:right center;
 
 
     background-attachment: ;
